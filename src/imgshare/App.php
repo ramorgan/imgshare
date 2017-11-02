@@ -5,6 +5,7 @@ namespace imgshare;
 use Silex\Application as SilexApplication;
 use Silex\Provider\DoctrineServiceProvider;
 use Doctrine\DBAL\Connection;
+use Igorw\Silex\ConfigServiceProvider;
 
 
 class App extends SilexApplication
@@ -19,15 +20,21 @@ class App extends SilexApplication
 
     protected function registerProviders(App $app)
     {
+        // Load the installation-specific configuration file. This should never be in Git.
+        $app->register(new ConfigServiceProvider(__DIR__."/../../config/settings.json"));
+
+        // Load environment-specific configuration.
+        $app->register(new ConfigServiceProvider(__DIR__."/../../config/{$app['environment']}.json"));
+
         $app->register(
             new DoctrineServiceProvider(),
             [
                 'db.options' => [
                     'driver'   => 'pdo_mysql',
-                    'dbname'   => 'default',
-                    'host'     => 'db',
-                    'user'     => 'user',
-                    'password' => 'user',
+                    'dbname'   => $app['database']['dbname'],
+                    'host'     => $app['database']['host'],
+                    'user'     => $app['database']['user'],
+                    'password' => $app['database']['password'],
                 ],
             ]
         );
