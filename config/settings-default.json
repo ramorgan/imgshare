@@ -1,0 +1,9 @@
+{
+  "database": {
+    "dbname" : "",
+    "host": "",
+    "user": "",
+    "password": ""
+  },
+  "environment": "dev"
+}
