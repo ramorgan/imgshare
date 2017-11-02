@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "67cc184422b99535656bc507730a61ff",
+    "content-hash": "1c090d73a4cf3fa056bbc2377622da71",
     "packages": [
         {
             "name": "doctrine/common",
@@ -401,6 +401,68 @@
                 "psr-3"
             ],
             "time": "2016-10-10T12:19:37+00:00"
+        },
+        {
+            "name": "saxulum/config-service-provider",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/saxulum/ConfigServiceProvider.git",
+                "reference": "e165db5b248c7160ed5b812c43aee7548cb2dd02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/saxulum/ConfigServiceProvider/zipball/e165db5b248c7160ed5b812c43aee7548cb2dd02",
+                "reference": "e165db5b248c7160ed5b812c43aee7548cb2dd02",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3,<8.0",
+                "pimple/pimple": "~3.0"
+            },
+            "replace": {
+                "igorw/config-service-provider": "self.version"
+            },
+            "require-dev": {
+                "jamesmoss/toml": "~0.1",
+                "phpunit/phpunit": "4.0.*",
+                "symfony/yaml": "~2.2|~3.0"
+            },
+            "suggest": {
+                "jamesmoss/toml": "~0.1",
+                "symfony/yaml": "~2.2|~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Igorw\\Silex\\": "src/Igorw/Silex/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/igorw/ConfigServiceProvider/contributors"
+                },
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                }
+            ],
+            "description": "A config ServiceProvider for Pimple with support for php, json and yaml.",
+            "keywords": [
+                "pimple",
+                "silex"
+            ],
+            "time": "2016-10-11T08:39:55+00:00"
         },
         {
             "name": "silex/silex",
